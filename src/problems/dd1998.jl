@@ -117,7 +117,7 @@ function DD1()
         return H
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2);

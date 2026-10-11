@@ -66,7 +66,7 @@ function FDS(; nvar::Int = 5)
 
     bounds = (fill(-2.0, n), fill(2.0, n))
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2, f3);
         name = meta.name,
         bounds = bounds,

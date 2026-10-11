@@ -31,7 +31,7 @@ function IM1()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = ([1.0, 1.0], [4.0, 2.0]),

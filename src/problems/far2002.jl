@@ -76,7 +76,7 @@ function Far1()
 
     bounds = (fill(-1.0, n), fill(1.0, n))
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = bounds,

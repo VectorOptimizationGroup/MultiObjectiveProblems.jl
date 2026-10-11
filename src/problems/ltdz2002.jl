@@ -64,7 +64,7 @@ function LTDZ1()
         return g
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2, f3);

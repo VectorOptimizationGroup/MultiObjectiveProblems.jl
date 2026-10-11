@@ -6,7 +6,7 @@ using .TestUtils
 
 # A 3ⁿ grid at the quartiles of the box from `recommended_bounds` when n ≤ 2;
 # one sampled point otherwise.
-function grid_points(prob::MultiObjectiveProblems.MOProblem)
+function grid_points(prob::MultiObjectiveProblem)
     prob.nvar <= 2 || return [TestUtils.sample_x(prob)]
     l, u = recommended_bounds(prob)
     levels = [[Float64(l[i]) + t * (Float64(u[i]) - Float64(l[i])) for t in (0.25, 0.5, 0.75)]

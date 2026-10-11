@@ -56,7 +56,7 @@ MultiObjectiveProblems.recommended_bounds
 ## Core Types
 
 ```@docs
-MultiObjectiveProblems.MOProblem
+MultiObjectiveProblems.MultiObjectiveProblem
 MultiObjectiveProblems.ProblemMeta
 MultiObjectiveProblems.AbstractDimensionSpec
 MultiObjectiveProblems.FixedDimension

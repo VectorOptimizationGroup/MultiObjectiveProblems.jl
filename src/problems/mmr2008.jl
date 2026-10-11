@@ -38,7 +38,7 @@ function MMR1()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = ([0.1, 0.0], [1.0, 1.0]),
@@ -93,7 +93,7 @@ function MMR2()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (zeros(n), ones(n)),
@@ -135,7 +135,7 @@ function MMR3()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (fill(-1.0, n), fill(1.0, n)),
@@ -180,7 +180,7 @@ function MMR4()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (zeros(n), fill(4.0, n)),

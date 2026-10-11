@@ -47,7 +47,7 @@ function LE1()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (fill(-5.0, n), fill(10.0, n)),

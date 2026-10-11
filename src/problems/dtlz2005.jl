@@ -87,7 +87,7 @@ function DTLZ1(; k::Int = 5, nobj::Int = 3)
         push!(gradients, df_i_dx)
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         objectives;
@@ -188,7 +188,7 @@ function DTLZ2(; k::Int = 10, nobj::Int = 3)
         push!(gradients, df_i_dx)
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         objectives;
@@ -290,7 +290,7 @@ function DTLZ3(; k::Int = 10, nobj::Int = 3)
         push!(gradients, df_i_dx)
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         objectives;
@@ -395,7 +395,7 @@ function DTLZ4(; k::Int = 10, nobj::Int = 3, alpha::Real = 100.0)
         push!(gradients, df_i_dx)
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         objectives;
@@ -547,7 +547,7 @@ function DTLZ5(; k::Int = 10, nobj::Int = 5)
         push!(gradients, df_ind_dx)
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         objectives;

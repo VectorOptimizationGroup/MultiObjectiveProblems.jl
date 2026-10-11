@@ -37,7 +37,7 @@ function ZLT1(; nvar::Int = 100, nobj::Int = 2)
         end
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, objectives;
         name = meta.name,
         bounds = (fill(-1000.0, n), fill(1000.0, n)),

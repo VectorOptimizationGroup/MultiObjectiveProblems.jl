@@ -30,7 +30,7 @@ function MLF1()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (zeros(n), fill(20.0, n)),
@@ -82,7 +82,7 @@ function MLF2()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         jacobian = (df1_dx, df2_dx),

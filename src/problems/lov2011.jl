@@ -32,7 +32,7 @@ function Lov1()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         jacobian = (df1_dx, df2_dx),
@@ -74,7 +74,7 @@ function Lov2()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         jacobian = (df1_dx, df2_dx),
@@ -115,7 +115,7 @@ function Lov3()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         jacobian = (df1_dx, df2_dx),
@@ -161,7 +161,7 @@ function Lov4()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         jacobian = (df1_dx, df2_dx),
@@ -262,7 +262,7 @@ function Lov5()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         jacobian = (df1_dx, df2_dx),
@@ -307,7 +307,7 @@ function Lov6()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = ([0.1, -0.16, -0.16, -0.16, -0.16, -0.16], [0.425, 0.16, 0.16, 0.16, 0.16, 0.16]),

@@ -28,7 +28,7 @@ relok(A, B; atol=ATOL, rtol=RTOL) = (norm(A - B) / max(norm(B), atol)) <= rtol
 
 # Uniform point in the problem's bounds or, for unbounded problems, in the box
 # from `recommended_bounds`.
-function sample_x(prob::MultiObjectiveProblems.MOProblem; rng=Random.MersenneTwister(42))
+function sample_x(prob::MultiObjectiveProblem; rng=Random.MersenneTwister(42))
     l, u = recommended_bounds(prob)
     return [Float64(l[i]) + rand(rng) * (Float64(u[i]) - Float64(l[i])) for i in 1:prob.nvar]
 end

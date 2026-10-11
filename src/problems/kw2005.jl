@@ -59,7 +59,7 @@ function KW2()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (fill(-3.0, n), fill(3.0, n)),

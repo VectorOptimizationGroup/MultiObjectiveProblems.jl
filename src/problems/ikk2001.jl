@@ -41,7 +41,7 @@ function IKK1()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2, f3);
         name = meta.name,
         bounds = (fill(-50.0, n), fill(50.0, n)),

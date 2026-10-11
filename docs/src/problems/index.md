@@ -1,10 +1,11 @@
 # Problem Families
 
 MultiObjectiveProblems.jl groups benchmark constructors by their source family or
-publication. Each constructor returns an
-[`MOProblem`](@ref MultiObjectiveProblems.MOProblem) instance with effective dimensions,
-objective and constraint evaluators, variable and constraint bounds when
-available, and registered analytical derivatives when implemented.
+publication. Each constructor returns a
+[`MultiObjectiveProblem`](@ref MultiObjectiveProblems.MultiObjectiveProblem)
+instance with effective dimensions, objective and constraint evaluators,
+variable and constraint bounds when available, and registered analytical
+derivatives when implemented.
 
 ## Documented families
 

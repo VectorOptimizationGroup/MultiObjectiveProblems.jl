@@ -42,7 +42,7 @@ function Toi4()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (fill(-2.0, n), fill(5.0, n)),
@@ -101,7 +101,7 @@ function Toi8(; nvar::Int = 3)
         end
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, f_list;
         name = meta.name,
         bounds = (fill(-1.0, n), fill(1.0, n)),
@@ -175,7 +175,7 @@ function Toi9(; nvar::Int = 4)
         end
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, f_list;
         name = meta.name,
         bounds = (fill(-1.0, n), fill(1.0, n)),
@@ -221,7 +221,7 @@ function Toi10(; nvar::Int = 4)
         end
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, f_rows;
         name = meta.name,
         bounds = (fill(-2.0, n), fill(2.0, n)),

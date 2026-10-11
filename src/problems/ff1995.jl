@@ -33,7 +33,7 @@ function FF1()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         jacobian = (df1_dx, df2_dx),

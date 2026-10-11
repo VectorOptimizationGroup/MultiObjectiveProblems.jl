@@ -165,11 +165,11 @@ Return the number of objectives in the metadata's default instance.
 default_nobj(meta::ProblemMeta) = _default_nobj(meta.dimension)::Int
 
 """
-    MOProblem
+    MultiObjectiveProblem
 
 Concrete evaluable instance of a benchmark problem.
 
-Benchmark constructors such as `ZDT1()` and `AP1()` return `MOProblem`
+Benchmark constructors such as `ZDT1()` and `AP1()` return `MultiObjectiveProblem`
 instances. The fields `nvar`, `nobj`, and `ncon` give the numbers of variables,
 objectives, and general constraints. `bounds` is either `(lower, upper)` or
 `nothing`. Objective and constraint evaluators are stored in `f` and `c`, and
@@ -179,7 +179,7 @@ General constraints follow `lcon <= c(x) <= ucon`; equalities are the rows for
 which the corresponding lower and upper bounds are equal. Static catalog
 information belongs to `ProblemMeta`.
 """
-struct MOProblem{F, J, H, B, C, CJ, CH, LC, UC}
+struct MultiObjectiveProblem{F, J, H, B, C, CJ, CH, LC, UC}
     name::String
     nvar::Int
     nobj::Int
@@ -195,11 +195,11 @@ struct MOProblem{F, J, H, B, C, CJ, CH, LC, UC}
     ucon::UC
 end
 
-function MOProblem(
+function MultiObjectiveProblem(
     nvar::Integer,
     nobj::Integer,
     f;
-    name::AbstractString = "Unnamed MO Problem",
+    name::AbstractString = "Unnamed problem",
     bounds = nothing,
     jacobian = nothing,
     hessian = nothing,
@@ -213,7 +213,7 @@ function MOProblem(
     nobj = Int(nobj)
     ncon = length(c)
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         String(name),
         nvar,
         nobj,

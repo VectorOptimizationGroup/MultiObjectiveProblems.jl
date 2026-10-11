@@ -47,7 +47,7 @@ function MGH9()
         return grad
     end, m)
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         objectives;
@@ -91,7 +91,7 @@ function MGH16(; nobj::Int = 5)
         return grad
     end, m)
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         objectives;
@@ -146,7 +146,7 @@ function MGH26(; nvar::Int = 4)
         end
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         objectives;
@@ -193,7 +193,7 @@ function MGH33(; nvar::Int = 10, nobj::Int = 10)
         return grad
     end, m)
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         objectives;

@@ -53,7 +53,7 @@ const _RECOMMENDED_BOUNDS = Dict{String, Tuple{Vector{Float64}, Vector{Float64}}
 
 """
     recommended_bounds(name::AbstractString) -> (lower, upper)
-    recommended_bounds(prob::MOProblem) -> (lower, upper)
+    recommended_bounds(prob::MultiObjectiveProblem) -> (lower, upper)
 
 Return a finite box `(lower, upper)` as two independent vectors.
 
@@ -75,7 +75,7 @@ lower, upper = recommended_bounds("Hil1")
 lower, upper = recommended_bounds(ZDT1(nvar = 10))
 ```
 
-See also [`filter_problems`](@ref), [`MOProblem`](@ref).
+See also [`filter_problems`](@ref), [`MultiObjectiveProblem`](@ref).
 """
 function recommended_bounds(name::AbstractString)
     problem_name = String(name)
@@ -94,7 +94,7 @@ function recommended_bounds(name::AbstractString)
     return (copy(bounds[1]), copy(bounds[2]))
 end
 
-function recommended_bounds(prob::MOProblem)
+function recommended_bounds(prob::MultiObjectiveProblem)
     isnothing(prob.bounds) || return (copy(prob.bounds[1]), copy(prob.bounds[2]))
 
     bounds = get(_RECOMMENDED_BOUNDS, prob.name, nothing)

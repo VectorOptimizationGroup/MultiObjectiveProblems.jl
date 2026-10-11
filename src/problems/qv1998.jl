@@ -77,7 +77,7 @@ function QV1(; nvar::Int = 16)
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (fill(-5.12, n), fill(5.12, n)),

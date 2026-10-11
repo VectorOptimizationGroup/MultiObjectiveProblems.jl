@@ -23,7 +23,7 @@ objective as not strictly convex (`:not_strictly_convex`).
 | `MLF2` | 2 | 2 | None | ``[-100,100]^2`` |
 
 `MLF2` is unconstrained: its recommended box is not registered in the returned
-`MOProblem` and is not a domain stated in [MLF2001](@cite). It provides a
+`MultiObjectiveProblem` and is not a domain stated in [MLF2001](@cite). It provides a
 practical finite search region when an algorithm requires one.
 
 ## Mathematical formulations

@@ -20,6 +20,9 @@ for file in filter(f -> endswith(f, ".jl"), readdir(joinpath(@__DIR__, "problems
     include(joinpath("problems", file))
 end
 
+# Problem and metadata types
+export MultiObjectiveProblem, ProblemMeta
+
 # Evaluation API
 export eval_f, eval_f!
 export eval_c, eval_c!

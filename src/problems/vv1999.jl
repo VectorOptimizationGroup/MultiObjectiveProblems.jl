@@ -56,7 +56,7 @@ function MOP2(; nvar::Int = 3)
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (fill(-4.0, n), fill(4.0, n)),
@@ -111,7 +111,7 @@ function MOP3()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (fill(-π, n), fill(π, n)),
@@ -172,7 +172,7 @@ function MOP5()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2, f3);
         name = meta.name,
         bounds = (fill(-30.0, n), fill(30.0, n)),
@@ -224,7 +224,7 @@ function MOP6(; q::Int = 4)
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (zeros(n), ones(n)),
@@ -279,7 +279,7 @@ function MOP7()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2, f3);
         name = meta.name,
         bounds = (fill(-400.0, n), fill(400.0, n)),

@@ -51,7 +51,7 @@ function SLCDT1(; lambda::Real = 0.85)
 
     lo, hi = lambda == 0 ? (-0.5, 0.5) : (-1.5, 1.5)
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2);
         name = meta.name,
         bounds = (fill(lo, n), fill(hi, n)),
@@ -132,7 +132,7 @@ function SLCDT2()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2, f3);
         name = meta.name,
         bounds = (fill(-1.0, n), fill(1.0, n)),

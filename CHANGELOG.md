@@ -15,5 +15,7 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   evaluation, dimension metadata, catalog filters, and recommended finite
   working boxes.
 - Source-traceable family documentation and executable examples.
+- Exported problem type `MultiObjectiveProblem`, returned by every benchmark
+  constructor, and metadata type `ProblemMeta`.
 
 [Unreleased]: https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl/commits/main

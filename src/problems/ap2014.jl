@@ -66,7 +66,7 @@ function AP1()
         return H
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2, f3);
@@ -120,7 +120,7 @@ function AP2()
         return H
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2);
@@ -180,7 +180,7 @@ function AP3()
         return H
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2);
@@ -269,7 +269,7 @@ function AP4()
         return H
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2, f3);

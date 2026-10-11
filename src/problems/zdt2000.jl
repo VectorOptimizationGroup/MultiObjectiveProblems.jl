@@ -55,7 +55,7 @@ function ZDT1(; nvar::Int = 30)
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2);
@@ -113,7 +113,7 @@ function ZDT2(; nvar::Int = 30)
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2);
@@ -183,7 +183,7 @@ function ZDT3(; nvar::Int = 30)
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2);
@@ -256,7 +256,7 @@ function ZDT4(; nvar::Int = 10)
     lower[1] = 0.0
     upper[1] = 1.0
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2);
@@ -342,7 +342,7 @@ function ZDT6(; nvar::Int = 10)
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2);

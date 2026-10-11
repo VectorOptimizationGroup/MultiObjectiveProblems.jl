@@ -39,7 +39,7 @@ function MHHM1()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2, f3);
         name = meta.name,
         bounds = (zeros(n), ones(n)),
@@ -91,7 +91,7 @@ function MHHM2()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n, m, (f1, f2, f3);
         name = meta.name,
         bounds = (zeros(n), ones(n)),

@@ -8,7 +8,7 @@ Simple Multimodal Multiobjective Functions” [PNR2006](@cite).
     The source defines the parameterized `TWO-ON-ONE` mapping on
     ``\mathbb{R}^2``. `PNR` specializes it to the Case 1 parameters
     ``c=10`` and ``d=k=l=0``. The box ``[-2,2]^2`` is recommended for finite
-    searches, but it is neither registered in the returned `MOProblem` nor
+    searches, but it is neither registered in the returned `MultiObjectiveProblem` nor
     stated as the domain of the source formulation.
 
 ## Overview

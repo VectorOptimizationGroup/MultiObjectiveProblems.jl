@@ -29,7 +29,7 @@ function DGO0()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2);
@@ -70,7 +70,7 @@ function DGO1()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2);
@@ -111,7 +111,7 @@ function DGO2()
         return grad
     end
 
-    return MOProblem(
+    return MultiObjectiveProblem(
         n,
         m,
         (f1, f2);

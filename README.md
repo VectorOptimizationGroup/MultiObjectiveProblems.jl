@@ -1,5 +1,9 @@
 # MultiObjectiveProblems.jl
 
+[![Docs (dev)](https://img.shields.io/badge/docs-dev-blue.svg)](https://vectoroptimizationgroup.github.io/MultiObjectiveProblems.jl/dev/)
+[![CI](https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Coverage](https://codecov.io/gh/VectorOptimizationGroup/MultiObjectiveProblems.jl/graph/badge.svg?branch=main)](https://codecov.io/gh/VectorOptimizationGroup/MultiObjectiveProblems.jl)
+
 MultiObjectiveProblems.jl is a curated Julia library of benchmark problems for
 multiobjective optimization. It provides source-traceable problem
 implementations, a consistent evaluation API, registered analytical

@@ -7,6 +7,14 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Installation instructions use the registered package,
+  `Pkg.add("MultiObjectiveProblems")`; installing from GitHub is documented as
+  the development version.
+
+## [0.1.0] - 2026-10-12
+
 ### Added
 
 - A curated catalog of 73 multiobjective benchmark problems with consistent
@@ -18,4 +26,5 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Exported problem type `MultiObjectiveProblem`, returned by every benchmark
   constructor, and metadata type `ProblemMeta`.
 
-[Unreleased]: https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl/commits/main
+[Unreleased]: https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl/releases/tag/v0.1.0

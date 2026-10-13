@@ -1,21 +1,31 @@
 # Installation
 
-## Install from GitHub
-
-Add MultiObjectiveProblems.jl to the active Julia environment directly from its GitHub
-repository:
-
 The installation commands below are illustrative: they modify the active
 environment or use a placeholder path.
 
+## Install the registered release
+
+MultiObjectiveProblems.jl is registered in the Julia General registry. Add it to
+the active Julia environment by name:
+
 ```julia
 import Pkg
-Pkg.add(url = "https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl")
+Pkg.add("MultiObjectiveProblems")
 ```
 
 Using a project-specific environment is recommended so that the package
 version is recorded alongside the rest of the project's dependencies. See the
 Julia `Pkg` documentation for environment creation and activation.
+
+## Install the development version
+
+To use changes that are not yet in a registered release, install the `main`
+branch directly from GitHub:
+
+```julia
+import Pkg
+Pkg.add(url = "https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl")
+```
 
 ## Install from a local checkout
 

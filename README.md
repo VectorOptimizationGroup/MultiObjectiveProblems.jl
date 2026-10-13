@@ -1,5 +1,6 @@
 # MultiObjectiveProblems.jl
 
+[![Docs (stable)](https://img.shields.io/badge/docs-stable-blue.svg)](https://vectoroptimizationgroup.github.io/MultiObjectiveProblems.jl/stable/)
 [![Docs (dev)](https://img.shields.io/badge/docs-dev-blue.svg)](https://vectoroptimizationgroup.github.io/MultiObjectiveProblems.jl/dev/)
 [![CI](https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl/actions/workflows/CI.yml?query=branch%3Amain)
 [![Coverage](https://codecov.io/gh/VectorOptimizationGroup/MultiObjectiveProblems.jl/graph/badge.svg?branch=main)](https://codecov.io/gh/VectorOptimizationGroup/MultiObjectiveProblems.jl)
@@ -13,11 +14,11 @@ derivatives, and metadata-based catalog queries.
 
 ```julia
 import Pkg
-Pkg.add(url = "https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl")
+Pkg.add("MultiObjectiveProblems")
 ```
 
-See the [installation guide](https://vectoroptimizationgroup.github.io/MultiObjectiveProblems.jl/dev/installation/)
-for project environments and local checkouts.
+See the [installation guide](https://vectoroptimizationgroup.github.io/MultiObjectiveProblems.jl/stable/installation/)
+for the development version, project environments, and local checkouts.
 
 ## Quick Example
 

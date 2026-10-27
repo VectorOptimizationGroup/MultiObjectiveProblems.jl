@@ -7,6 +7,11 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Analytical Jacobians for `AAS1` and `AAS2`, so every problem in the catalog
+  now registers one; `filter_problems(has_jacobian = true)` includes both.
+
 ### Changed
 
 - Installation instructions use the registered package,

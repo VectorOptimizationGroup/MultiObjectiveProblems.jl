@@ -1,6 +1,7 @@
 using Test
 using MultiObjectiveProblems
 using .TestUtils
+using Random
 
 @testset "Jacobian: analytic vs FD" begin
     names = MultiObjectiveProblems.filter_problems(has_jacobian=true)
@@ -211,4 +212,71 @@ end
     interior = copy(boundary)
     interior[2] = eps(Float64)
     @test all(isfinite, eval_jacobian(prob, interior))
+end
+
+# The second AAS1 objective and both AAS2 objectives have the form
+# `(λ/p) Σ |yᵢ|^p` with `y` affine in `x` and `p` slightly above one, so each
+# gradient term `sign(yᵢ) |yᵢ|^(p-1)` is still about `±0.95` at `|yᵢ| = 1e-8`
+# and is `0` at `yᵢ = 0`. The kinks below make a component of `y` exactly zero in
+# `Float64` and in the `BigFloat` reference; the ones marked `all` also in
+# `Float32`. A search of the box found no point other than the centre `c₂` that
+# zeroes the second component of AAS2's `y` for `f₂`, so that kink is tested at
+# the centre.
+# A `Float32` kink is checked against the `Float64` Jacobian at the same kink,
+# not against the `BigFloat` reference: the reference rounds the constants to
+# `Float64`, sees `yᵢ ≈ 1e-8` instead of zero, and so a term near `±0.95`.
+@testset "AAS Jacobian at random points and kinks" begin
+    rng = Random.MersenneTwister(2025)
+    cases = (
+        (AAS1(), [
+            ([0.0, 0.0], true),     # f₂: y₁ = y₂ = 0
+            ([0.8, -1.0], true),    # f₂: y₁ = 0
+            ([-2.0, 0.5], true),    # f₂: y₂ = 0
+        ]),
+        (AAS2(), [
+            ([1.5, -1.0], true),    # f₁: y₁ = y₂ = 0
+            ([1.75, 0.0], true),    # f₁: y₁ = 0
+            ([0.0, -0.6], false),   # f₁: y₂ = 0
+            ([-1.2, 0.8], true),    # f₂: y₁ = y₂ = 0
+            ([-0.7, -1.0], false),  # f₂: y₁ = 0
+            ([-1.7, 2.6], true),    # f₂: y₁ = 0
+        ]),
+    )
+    # Float32 rounding of the analytical evaluation.
+    rtol32 = 100 * eps(Float32)
+
+    for (prob, kinks) in cases
+        f = y -> MultiObjectiveProblems.eval_f(prob, y)
+        J = y -> MultiObjectiveProblems.eval_jacobian(prob, y)
+        l, u = prob.bounds
+        randoms = [l .+ rand(rng, prob.nvar) .* (u .- l) for _ in 1:200]
+
+        @testset "$(prob.name) Float64" begin
+            for x in vcat(randoms, first.(kinks))
+                ok, err = TestUtils.check_jacobian(f, J, x)
+                ok || @info "Jacobian mismatch" name=prob.name x=x relerr=err
+                @test ok
+            end
+        end
+
+        @testset "$(prob.name) Float32" begin
+            for x in (Float32.(r) for r in randoms)
+                @test eltype(J(x)) === Float32
+                ok, err = TestUtils.check_jacobian(f, J, x; rtol=rtol32)
+                ok || @info "Jacobian mismatch" name=prob.name x=x relerr=err
+                @test ok
+            end
+            for (x, all) in kinks
+                all || continue
+                J32 = J(Float32.(x))
+                @test eltype(J32) === Float32
+                @test TestUtils.relok(J32, J(x); rtol=rtol32)
+            end
+        end
+    end
+
+    @test eval_jacobian_row(AAS1(), [0.0, 0.0], 2) == [0.0, 0.0]
+    @test eval_jacobian_row(AAS2(), [1.5, -1.0], 1) == [0.0, 0.0]
+    @test eval_jacobian_row(AAS2(), [-1.2, 0.8], 2) == [0.0, 0.0]
+    @test eval_jacobian_row(AAS1(), Float32[0, 0], 2) == Float32[0, 0]
 end

@@ -14,7 +14,18 @@ below.
 | `AAS1` | 2 | 2 | -2.0 | 2.0 |
 | `AAS2` | 2 | 2 | -5.0 | 5.0 |
 
-The bounds in each row apply componentwise to both variables. **Analytical Jacobians and Hessians are not registered for either constructor**. Strict-convexity information is not available (`nothing`) for either problem.
+The bounds in each row apply componentwise to both variables. Analytical Jacobians are registered for both constructors. **Hessians are not registered**. Strict-convexity information is not available (`nothing`) for either problem.
+
+!!! note "Gradients where a power term vanishes"
+    Each ``\frac{\mu}{p}\lVert y\rVert_p^p`` objective, with ``y`` affine in
+    ``x`` and ``p > 1``, has gradient ``\mu\, M^\top\big(\operatorname{sign}(y)
+    \odot \lvert y\rvert^{p-1}\big)``, where ``M`` is ``D``, ``D_1`` or
+    ``D_2``. It is defined where a component ``y_i`` vanishes, and that
+    component contributes zero. Because ``p - 1`` is between ``0.002`` and
+    ``0.003``, ``\lvert y_i\rvert^{p-1}`` is still about ``0.95`` at
+    ``\lvert y_i\rvert = 10^{-8}``: the gradient varies sharply near those
+    points, and an evaluation in `Float32` can round ``y_i`` to zero where the
+    exact value is not.
 
 ## Mathematical formulations
 

@@ -54,7 +54,7 @@ julia> names = filter_problems(
        );
 
 julia> length(names)
-51
+53
 ```
 
 Continue with [Evaluation and Derivatives](@ref) for preallocation, numeric

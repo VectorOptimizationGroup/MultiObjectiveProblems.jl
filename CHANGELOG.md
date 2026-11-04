@@ -18,6 +18,10 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `Pkg.add("MultiObjectiveProblems")`; installing from GitHub is documented as
   the development version.
 
+### Fixed
+
+- `DTLZ1` Jacobian: `NaN` on the box faces `x[m-i+1] = 1`.
+
 ## [0.1.0] - 2026-10-12
 
 ### Added

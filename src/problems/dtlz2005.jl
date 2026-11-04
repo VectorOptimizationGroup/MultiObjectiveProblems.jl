@@ -74,7 +74,7 @@ function DTLZ1(; k::Int = 5, nobj::Int = 3)
             end
 
             if i > 1
-                grad[m-i+1] = -T(0.5) * (one(T) + gx) * prod_term / (one(T) - x[m-i+1])
+                grad[m-i+1] = -T(0.5) * (one(T) + gx) * prod(view(x, 1:(m-i)); init = one(T))
             end
 
             for j in m:n

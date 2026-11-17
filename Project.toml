@@ -4,7 +4,6 @@ version = "0.1.0"
 authors = [
     "Danilo Rodrigues de Souza",
     "Leandro da Fonseca Prudente",
-    "Pedro Bonfim de Assunção Filho",
 ]
 
 [deps]

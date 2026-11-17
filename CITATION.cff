@@ -2,7 +2,7 @@ cff-version: "1.2.0"
 message: "If you use MultiObjectiveProblems.jl in your research, please cite the software using these metadata."
 title: "MultiObjectiveProblems.jl"
 type: software
-version: "0.1.0"
+version: "0.2.0"
 authors:
   - family-names: "Souza"
     given-names: "Danilo Rodrigues de"

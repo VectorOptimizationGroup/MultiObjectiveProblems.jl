@@ -1,6 +1,6 @@
 name = "MultiObjectiveProblems"
 uuid = "a5b80fa4-7d73-4f2e-b7b1-8d4a9c5c7c4d"
-version = "0.2.0"
+version = "0.1.1"
 authors = [
     "Danilo Rodrigues de Souza",
     "Leandro da Fonseca Prudente",

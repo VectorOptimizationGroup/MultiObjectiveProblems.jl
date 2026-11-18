@@ -59,10 +59,22 @@ API reference, and bibliography. Instructions for building it locally are in
 Contributions are welcome. See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the
 development workflow, testing requirements, and source-evidence checklist.
 
-## Citation
+## Citing
 
 If you use MultiObjectiveProblems.jl in research, please cite the software using the
-metadata in [`CITATION.cff`](CITATION.cff).
+metadata in [`CITATION.cff`](CITATION.cff). Since many BibTeX styles do not
+define `@software`, the following `@misc` entry works with any of them;
+replace the version with the one you used:
+
+```bibtex
+@misc{MultiObjectiveProblems_jl,
+  author       = {Prudente, Leandro Fonseca and Souza, Danilo Rodrigues},
+  title        = {{MultiObjectiveProblems.jl}},
+  year         = {2026},
+  howpublished = {\url{https://github.com/VectorOptimizationGroup/MultiObjectiveProblems.jl}},
+  note         = {Julia package, version 0.1.1, MIT license}
+}
+```
 
 ## License
 
